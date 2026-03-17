@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>东南亚三城之旅 · 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1c1a17;
+    --ink2: #4a4540;
+    --ink3: #8a8278;
+    --sand: #f5f0e8;
+    --sand2: #ede6d6;
+    --sand3: #e0d5c0;
+    --gold: #c4882a;
+    --gold2: #e8b85a;
+    --teal: #2a7a6b;
+    --teal2: #3d9e8c;
+    --coral: #c45830;
+    --rust: #a03820;
+    --cream: #faf7f2;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(196,136,42,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 80% at 80% 20%, rgba(42,122,107,0.15) 0%, transparent 60%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, rgba(196,88,48,0.08) 0%, transparent 70%);
+  }
+
+  .hero-pattern {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image:
+      repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+    background-size: 20px 20px;
+  }
+
+  .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    letter-spacing: 0.3em;
+    color: var(--gold2);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2.8rem, 8vw, 6rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--gold2);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+
+  .hero-meta {
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+
+  .hero-meta-item {
+    text-align: center;
+  }
+
+  .hero-meta-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--gold2);
+    line-height: 1;
+  }
+
+  .hero-meta-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.45);
+    margin-top: 0.25rem;
+  }
+
+  .hero-divider {
+    width: 1px; height: 40px;
+    background: rgba(255,255,255,0.15);
+    align-self: center;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 2.5rem; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    animation: bounce 2s infinite;
+    z-index: 2;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  }
+
+  /* ── ROUTE STRIP ── */
+  .route-strip {
+    background: var(--gold);
+    padding: 1rem 2rem;
+    display: flex; align-items: center; justify-content: center;
+    gap: 0.5rem; flex-wrap: wrap;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .route-city { white-space: nowrap; }
+  .route-arrow { opacity: 0.6; font-size: 0.7rem; }
+
+  /* ── SECTION ── */
+  .section {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+  }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 3rem;
+    line-height: 1.3;
+  }
+
+  .section-divider {
+    width: 40px; height: 2px;
+    background: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  /* ── FLIGHTS ── */
+  .flights-grid {
+    display: flex; flex-direction: column; gap: 1px;
+    border: 1px solid var(--sand3);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .flight-row {
+    display: grid;
+    grid-template-columns: 140px 1fr auto;
+    gap: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: #fff;
+    align-items: center;
+    transition: background 0.2s;
+    border-bottom: 1px solid var(--sand2);
+  }
+
+  .flight-row:last-child { border-bottom: none; }
+  .flight-row:hover { background: var(--sand); }
+
+  .flight-row.changed { border-left: 3px solid var(--coral); }
+  .flight-row.warn { border-left: 3px solid #e8a020; }
+
+  .flight-info { }
+  .flight-airline { font-size: 0.68rem; color: var(--ink3); letter-spacing: 0.05em; margin-bottom: 0.2rem; }
+  .flight-num { font-size: 1rem; font-weight: 500; }
+
+  .flight-times {
+    display: flex; align-items: center; gap: 1rem;
+  }
+
+  .ft {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+  }
+
+  .fp {
+    font-size: 0.68rem;
+    color: var(--ink3);
+    margin-top: 0.2rem;
+  }
+
+  .flight-mid {
+    flex: 1;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+
+  .flight-line {
+    width: 100%; height: 1px;
+    background: var(--sand3);
+    position: relative;
+  }
+
+  .flight-line::before {
+    content: '✈';
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--cream);
+    padding: 0 6px;
+    font-size: 11px;
+    color: var(--ink3);
+  }
+
+  .flight-dur { font-size: 0.68rem; color: var(--ink3); }
+
+  .flight-date {
+    font-size: 0.75rem;
+    color: var(--ink3);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.62rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    margin-top: 0.3rem;
+    letter-spacing: 0.05em;
+  }
+  .badge-warn { background: #fff3cd; color: #856404; }
+  .badge-alert { background: #fce8e0; color: #a03820; }
+
+  /* ── DEST ── */
+  .dest-section {
+    padding: 0;
+  }
+
+  .dest-block {
+    margin-bottom: 5rem;
+  }
+
+  .dest-header {
+    position: relative;
+    padding: 4rem 2rem 3rem;
+    background: var(--ink);
+    color: #fff;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .dest-header.bali { background: linear-gradient(135deg, #1a3028 0%, #0d1f18 100%); }
+  .dest-header.surabaya { background: linear-gradient(135deg, #1a2030 0%, #0d1520 100%); }
+  .dest-header.hcm { background: linear-gradient(135deg, #301820 0%, #200d12 100%); }
+
+  .dest-header-bg {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: repeating-linear-gradient(
+      -45deg, #fff 0, #fff 1px, transparent 0, transparent 10px
+    );
+  }
+
+  .dest-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.06);
+    position: absolute;
+    right: 2rem; top: 1rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .dest-tag {
+    font-size: 0.65rem; letter-spacing: 0.25em;
+    color: var(--gold2); margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .dest-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .dest-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-style: italic;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+  }
+
+  .dest-nights {
+    margin-top: 1rem;
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── HOTEL CARD ── */
+  .hotel-card {
+    background: #fff;
+    border: 1px solid var(--sand3);
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 2rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+
+  .hotel-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--sand2);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1rem;
+  }
+
+  .hotel-name { font-weight: 500; font-size: 0.88rem; margin-bottom: 0.2rem; }
+  .hotel-cn { font-size: 0.72rem; color: var(--ink3); margin-bottom: 0.4rem; }
+  .hotel-dates { font-size: 0.72rem; color: var(--gold); }
+
+  /* ── DAYS ── */
+  .days-list { display: flex; flex-direction: column; gap: 0; }
+
+  .day-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--sand2);
+    position: relative;
+  }
+
+  .day-item:last-child { border-bottom: none; }
+
+  .day-left {
+    text-align: right;
+    padding-top: 0.1rem;
+    flex-shrink: 0;
+  }
+
+  .day-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--sand3);
+  }
+
+  .day-date { font-size: 0.65rem; color: var(--ink3); letter-spacing: 0.05em; }
+
+  .day-right { }
+
+  .day-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.75rem;
+  }
+
+  .acts { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .act {
+    display: flex; align-items: flex-start; gap: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--ink2);
+    line-height: 1.5;
+  }
+
+  .act-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--sand3);
+    flex-shrink: 0;
+    margin-top: 0.45rem;
+  }
+
+  .act-dot.hl { background: var(--gold); }
+  .act-dot.flight { background: var(--coral); }
+
+  .act-tag {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    align-self: center;
+    letter-spacing: 0.04em;
+  }
+
+  .t-nature { background: #e8f5e0; color: #3a6e10; }
+  .t-culture { background: #e0eef8; color: #1a5a8a; }
+  .t-food { background: #faf0e0; color: #8a5010; }
+  .t-beach { background: #e0f5f0; color: #0a6a58; }
+  .t-flight { background: #fce8e0; color: #8a3018; }
+  .t-shop { background: #f0eef8; color: #4a3888; }
+
+  /* ── TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    border: 1px solid var(--sand3);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .tip-card {
+    background: #fff;
+    padding: 1.5rem;
+    transition: background 0.2s;
+  }
+
+  .tip-card:hover { background: var(--sand); }
+
+  .tip-icon { font-size: 1.3rem; margin-bottom: 0.75rem; }
+  .tip-title { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: var(--gold); text-transform: uppercase; }
+  .tip-body { font-size: 0.78rem; color: var(--ink2); line-height: 1.6; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.3);
+    text-align: center;
+    padding: 3rem 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+  }
+
+  footer strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.15);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0;
+    background: rgba(28,26,23,0.96);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    padding: 0 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-inner {
+    max-width: 960px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 52px;
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em;
+  }
+
+  .nav-links {
+    display: flex; gap: 2rem; list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold2); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 640px) {
+    .flight-row { grid-template-columns: 1fr; gap: 0.75rem; }
+    .flight-date { text-align: left; }
+    .nav-links { display: none; }
+    .day-item { grid-template-columns: 56px 1fr; gap: 1rem; }
+    .day-num { font-size: 2rem; }
+    .hero-meta { gap: 1.2rem; }
+    .hero-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">东南亚三城之旅 · 2025</span>
+    <ul class="nav-links">
+      <li><a href="#flights">航班</a></li>
+      <li><a href="#surabaya">泗水</a></li>
+      <li><a href="#bali">巴厘岛</a></li>
+      <li><a href="#hcm">胡志明</a></li>
+      <li><a href="#tips">贴士</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Private Travel Journal · April 2025</p>
+    <h1 class="hero-title">东南亚<br><em>三城之旅</em></h1>
+    <p class="hero-subtitle">泗水 · 巴厘岛 · 胡志明市</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">10</div>
+        <div class="hero-meta-label">天</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">3</div>
+        <div class="hero-meta-label">目的地</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">3</div>
+        <div class="hero-meta-label">位旅伴</div>
+      </div>
+      <div class="hero-divider"></div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-num">5</div>
+        <div class="hero-meta-label">段航班</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">SCROLL</div>
+</section>
+
+<!-- ROUTE -->
+<div class="route-strip">
+  <span class="route-city">北京大兴</span>
+  <span class="route-arrow">→</span>
+  <span class="route-city">吉隆坡</span>
+  <span class="route-arrow">→</span>
+  <span class="route-city">泗水</span>
+  <span class="route-arrow">→</span>
+  <span class="route-city">巴厘岛</span>
+  <span class="route-arrow">→</span>
+  <span class="route-city">胡志明市</span>
+  <span class="route-arrow">→</span>
+  <span class="route-city">北京大兴</span>
+</div>
+
+<!-- FLIGHTS -->
+<section class="section" id="flights">
+  <div class="fade-in">
+    <div class="section-label">Flight Schedule</div>
+    <div class="section-divider"></div>
+    <h2 class="section-title">航班信息</h2>
+  </div>
+
+  <div class="flights-grid fade-in">
+
+    <div class="flight-row changed">
+      <div class="flight-info">
+        <div class="flight-airline">马来西亚亚航长途</div>
+        <div class="flight-num">D7343</div>
+        <span class="badge badge-alert">⚠ 时间已变更</span>
+      </div>
+      <div class="flight-times">
+        <div>
+          <div class="ft">02:15</div>
+          <div class="fp">北京大兴</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-line"></div>
+          <div class="flight-dur">6h 15m</div>
+        </div>
+        <div>
+          <div class="ft">08:30</div>
+          <div class="fp">吉隆坡 T2</div>
+        </div>
+      </div>
+      <div class="flight-date">04月04日<br>周六</div>
+    </div>
+
+    <div class="flight-row warn">
+      <div class="flight-info">
+        <div class="flight-airline">印尼亚航</div>
+        <div class="flight-num">QZ325</div>
+        <span class="badge badge-warn">⚠ 准点率仅 44%</span>
+      </div>
+      <div class="flight-times">
+        <div>
+          <div class="ft">17:40</div>
+          <div class="fp">吉隆坡 T2</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-line"></div>
+          <div class="flight-dur">2h 40m</div>
+        </div>
+        <div>
+          <div class="ft">19:20</div>
+          <div class="fp">泗水 朱安达</div>
+        </div>
+      </div>
+      <div class="flight-date">04月04日<br>周六</div>
+    </div>
+
+    <div class="flight-row">
+      <div class="flight-info">
+        <div class="flight-airline">连城航空</div>
+        <div class="flight-num">QG698</div>
+      </div>
+      <div class="flight-times">
+        <div>
+          <div class="ft">16:45</div>
+          <div class="fp">朱安达 T1</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-line"></div>
+          <div class="flight-dur">1h 05m</div>
+        </div>
+        <div>
+          <div class="ft">18:50</div>
+          <div class="fp">登巴萨 D</div>
+        </div>
+      </div>
+      <div class="flight-date">04月06日<br>周一</div>
+    </div>
+
+    <div class="flight-row">
+      <div class="flight-info">
+        <div class="flight-airline">越南航空</div>
+        <div class="flight-num">VN640</div>
+      </div>
+      <div class="flight-times">
+        <div>
+          <div class="ft">16:00</div>
+          <div class="fp">登巴萨 I</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-line"></div>
+          <div class="flight-dur">3h 40m</div>
+        </div>
+        <div>
+          <div class="ft">18:40</div>
+          <div class="fp">胡志明 新山一</div>
+        </div>
+      </div>
+      <div class="flight-date">04月12日<br>周日</div>
+    </div>
+
+    <div class="flight-row changed">
+      <div class="flight-info">
+        <div class="flight-airline">越南航空</div>
+        <div class="flight-num">VN516</div>
+        <span class="badge badge-alert">⚠ 时间已变更</span>
+      </div>
+      <div class="flight-times">
+        <div>
+          <div class="ft">00:35</div>
+          <div class="fp">新山一 T2</div>
+        </div>
+        <div class="flight-mid">
+          <div class="flight-line"></div>
+          <div class="flight-dur">4h 45m</div>
+        </div>
+        <div>
+          <div class="ft">06:30</div>
+          <div class="fp">北京大兴</div>
+        </div>
+      </div>
+      <div class="flight-date">04月13日<br>周一</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SURABAYA -->
+<section class="section dest-section" id="surabaya">
+  <div class="dest-block">
+    <div class="dest-header surabaya fade-in">
+      <div class="dest-header-bg"></div>
+      <div class="dest-num">01</div>
+      <div class="dest-tag">DESTINATION ONE · 2 NIGHTS</div>
+      <div class="dest-name">泗水</div>
+      <div class="dest-en">Surabaya, Indonesia</div>
+      <div class="dest-nights">04月04日 — 04月06日 · 2晚</div>
+    </div>
+
+    <div class="hotel-card fade-in">
+      <div class="hotel-icon">🏨</div>
+      <div>
+        <div class="hotel-name">（自选住宿）泗水市区</div>
+        <div class="hotel-cn">靠近朱安达机场或市中心，方便次日出发布罗莫</div>
+        <div class="hotel-dates">4月04日入住 · 4月06日离店</div>
+      </div>
+    </div>
+
+    <div class="days-list fade-in">
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">04</div>
+          <div class="day-date">周六</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">抵达泗水</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot flight"></span>19:20 抵达朱安达国际机场<span class="act-tag t-flight">航班</span></li>
+            <li class="act"><span class="act-dot"></span>前往市区酒店，办理入住休整</li>
+            <li class="act"><span class="act-dot hl"></span>夜宵尝试当地 Rawon 黑牛肉汤<span class="act-tag t-food">美食</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">05</div>
+          <div class="day-date">周日</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">布罗莫火山 + Madakaripura 瀑布</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>凌晨出发，驱车约3小时前往布罗莫<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot hl"></span>Penanjakan 观景台欣赏火山日出壮景</li>
+            <li class="act"><span class="act-dot hl"></span>骑马或徒步穿越火山灰海，近距离俯瞰火山口</li>
+            <li class="act"><span class="act-dot"></span>返回途中游览 Madakaripura 瀑布<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot"></span>傍晚返回泗水，晚餐休息</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">06</div>
+          <div class="day-date">周一</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">泗水市区 → 飞赴巴厘岛</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot"></span>上午游览阿拉伯街、英雄纪念碑<span class="act-tag t-culture">文化</span></li>
+            <li class="act"><span class="act-dot hl"></span>午餐品尝 Lontong Balap 传统米食<span class="act-tag t-food">美食</span></li>
+            <li class="act"><span class="act-dot flight"></span>16:45 QG698 飞往巴厘岛（提前3小时到机场）<span class="act-tag t-flight">航班</span></li>
+            <li class="act"><span class="act-dot"></span>18:50 抵达巴厘岛登巴萨机场，入住酒店</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BALI -->
+<section class="section dest-section" id="bali">
+  <div class="dest-block">
+    <div class="dest-header bali fade-in">
+      <div class="dest-header-bg"></div>
+      <div class="dest-num">02</div>
+      <div class="dest-tag">DESTINATION TWO · 6 NIGHTS</div>
+      <div class="dest-name">巴厘岛</div>
+      <div class="dest-en">Bali, Indonesia</div>
+      <div class="dest-nights">04月06日 — 04月12日 · 6晚</div>
+    </div>
+
+    <div class="hotel-card fade-in">
+      <div class="hotel-icon">🏨</div>
+      <div>
+        <div class="hotel-name">Hilton Garden Inn Bali Ngurah Rai Airport</div>
+        <div class="hotel-cn">巴厘岛机场希尔顿花园酒店 · 评分 4.2</div>
+        <div class="hotel-dates">4月06日入住 · 4月07日离店（1晚）</div>
+      </div>
+    </div>
+
+    <div class="hotel-card fade-in">
+      <div class="hotel-icon">🌿</div>
+      <div>
+        <div class="hotel-name">Cicada Resort Bali Ubud, Autograph Collection</div>
+        <div class="hotel-cn">巴厘岛乌布蝉鸣度假村，万豪傲途格精选 · 评分 4.8 ⭐</div>
+        <div class="hotel-dates">4月07日入住 · 4月09日离店（2晚）</div>
+      </div>
+    </div>
+
+    <div class="hotel-card fade-in">
+      <div class="hotel-icon">🏖️</div>
+      <div>
+        <div class="hotel-name">Courtyard Bali Nusa Dua Resort</div>
+        <div class="hotel-cn">巴厘岛努沙杜瓦万怡度假酒店 · 评分 4.6</div>
+        <div class="hotel-dates">4月09日入住 · 4月12日离店（3晚）</div>
+      </div>
+    </div>
+
+    <div class="days-list fade-in">
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">07</div>
+          <div class="day-date">周二</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">乌布探索日 — 咖啡庄园 + 圣泉寺</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>Bali Pulina 咖啡庄园免费参观，体验鸭香猫咖啡制作<span class="act-tag t-food">美食</span></li>
+            <li class="act"><span class="act-dot hl"></span>圣泉寺 Pura Tirta Empul — 千年神庙，可参与净化水礼<span class="act-tag t-culture">文化</span></li>
+            <li class="act"><span class="act-dot"></span>下午入住 Cicada Resort 乌布，享私人泳池</li>
+            <li class="act"><span class="act-dot hl"></span>傍晚观看传统 Kecak 火舞表演</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">08</div>
+          <div class="day-date">周三</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">乌布慢游 + Canggu 海滩派对</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>上午 Tegalalang 梯田漫步，空中秋千打卡<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot"></span>乌布皇宫与传统集市购物<span class="act-tag t-shop">购物</span></li>
+            <li class="act"><span class="act-dot hl"></span>驱车约1小时 → FINNS Beach Club，日落前到达<span class="act-tag t-beach">海滩</span></li>
+            <li class="act"><span class="act-dot hl"></span>Finns：海滩派对、冲浪、日落鸡尾酒，营业至凌晨</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">09</div>
+          <div class="day-date">周四</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">努沙·佩尼达岛 — 精灵坠崖</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>从 Sanur 码头坐快船出发，约30分钟抵达努沙岛<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot hl"></span>精灵坠崖 Kelingking Beach — 全球最美悬崖之一，T-Rex 地貌</li>
+            <li class="act"><span class="act-dot"></span>还可顺游 Angel's Billabong 天然泳池、Broken Beach</li>
+            <li class="act"><span class="act-dot flight"></span>下午返回，入住努沙杜瓦 Courtyard 酒店</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">10</div>
+          <div class="day-date">周五</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">南部神庙与火山湖</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>海神庙 Tanah Lot — 最具代表性的巴厘日落胜地<span class="act-tag t-culture">文化</span></li>
+            <li class="act"><span class="act-dot"></span>巴图尔火山湖全景<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot hl"></span>传统巴厘 SPA 按摩体验</li>
+            <li class="act"><span class="act-dot hl"></span>贝萨基母庙 Pura Besakih — 巴厘岛最神圣的寺庙<span class="act-tag t-culture">文化</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">11</div>
+          <div class="day-date">周六</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">努沙杜瓦海滩 + 购物</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>努沙杜瓦私人海滩浮潜或日光浴<span class="act-tag t-beach">海滩</span></li>
+            <li class="act"><span class="act-dot"></span>Kuta 商业街采购纪念品、伴手礼<span class="act-tag t-shop">购物</span></li>
+            <li class="act"><span class="act-dot"></span>行李打包，准备次日飞往胡志明市</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">12</div>
+          <div class="day-date">周日</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">巴厘岛 → 飞赴胡志明市</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot"></span>上午最后海滩漫步，与巴厘岛告别</li>
+            <li class="act"><span class="act-dot flight"></span>16:00 VN640 飞往胡志明市<span class="act-tag t-flight">航班</span></li>
+            <li class="act"><span class="act-dot"></span>18:40 抵达新山一机场，前往市区酒店</li>
+            <li class="act"><span class="act-dot hl"></span>夜游范五老街，Bui Vien 酒吧街，宵夜 Pho 河粉<span class="act-tag t-food">美食</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HO CHI MINH -->
+<section class="section dest-section" id="hcm">
+  <div class="dest-block">
+    <div class="dest-header hcm fade-in">
+      <div class="dest-header-bg"></div>
+      <div class="dest-num">03</div>
+      <div class="dest-tag">DESTINATION THREE · 1 NIGHT</div>
+      <div class="dest-name">胡志明市</div>
+      <div class="dest-en">Ho Chi Minh City, Vietnam</div>
+      <div class="dest-nights">04月12日 — 04月13日 · 1晚</div>
+    </div>
+
+    <div class="days-list fade-in">
+      <div class="day-item">
+        <div class="day-left">
+          <div class="day-num">13</div>
+          <div class="day-date">周一</div>
+        </div>
+        <div class="day-right">
+          <div class="day-title">胡志明市半日游 + 深夜返京</div>
+          <ul class="acts">
+            <li class="act"><span class="act-dot hl"></span>统一宫、战争遗址博物馆<span class="act-tag t-culture">文化</span></li>
+            <li class="act"><span class="act-dot hl"></span>Ben Thanh 市场最后采购<span class="act-tag t-shop">购物</span></li>
+            <li class="act"><span class="act-dot hl"></span>Cafe Apartment 喝咖啡打卡，俯瞰西贡街景<span class="act-tag t-food">美食</span></li>
+            <li class="act"><span class="act-dot flight"></span>00:35 VN516 深夜飞回北京（⚠ 时间已变更）<span class="act-tag t-flight">航班</span></li>
+            <li class="act"><span class="act-dot"></span>06:30 抵达北京大兴，完美收官 ✈</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section class="section" id="tips" style="background: var(--sand); max-width: 100%; padding: 5rem 2rem;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="fade-in">
+      <div class="section-label">Travel Notes</div>
+      <div class="section-divider"></div>
+      <h2 class="section-title">旅行贴士</h2>
+    </div>
+    <div class="tips-grid fade-in">
+      <div class="tip-card">
+        <div class="tip-icon">📋</div>
+        <div class="tip-title">签证</div>
+        <div class="tip-body">印尼30天免签；越南需提前申请电子签证（E-visa），约3个工作日批复，出发前务必办好。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">💰</div>
+        <div class="tip-title">货币</div>
+        <div class="tip-body">印尼盾（IDR）、越南盾（VND）建议到目的地兑换。大酒店和商场信用卡可用，小摊需备现金。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🌋</div>
+        <div class="tip-title">布罗莫火山</div>
+        <div class="tip-body">建议前一晚入住 Cemoro Lawang 村庄，凌晨3点出发赶日出。务必带厚外套（山顶寒冷）与口罩（硫磺气味）。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🛕</div>
+        <div class="tip-title">巴厘岛寺庙着装</div>
+        <div class="tip-body">进寺庙必须穿 Sarong 纱笼（腰布），进入时现场可租借，约1-2万印尼盾，或自备。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">⚠️</div>
+        <div class="tip-title">航班变更提醒</div>
+        <div class="tip-body">D7343（北京→吉隆坡）和 VN516（胡志明市→北京）均已有时间变更。出发前务必再次确认最新时刻表。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🚤</div>
+        <div class="tip-title">精灵坠崖出海</div>
+        <div class="tip-body">从 Sanur 码头乘快船约30分钟。建议提前在线预订往返船票，旺季需早，单程约150,000 IDR/人。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">🎉</div>
+        <div class="tip-title">Finns Beach Club</div>
+        <div class="tip-body">11:00 开门，下午4点后人气最旺。无强制消费但需最低消费，日落时分是黄金时刻，建议提前预订位置。</div>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">👥</div>
+        <div class="tip-title">乘机人</div>
+        <div class="tip-body">MA/GUANGM · TANG/XIAO · HAN/ZHENN，三人共同出行，所有航段均已出票完成。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Bon Voyage</strong>
+  北京 · 吉隆坡 · 泗水 · 巴厘岛 · 胡志明市 · 北京<br>
+  April 2025 · Private Travel Journal
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
