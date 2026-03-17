@@ -445,6 +445,31 @@
     letter-spacing: 0.04em;
   }
 
+  .act-photo { align-items: flex-start !important; flex-direction: column; gap: 0.4rem; }
+
+  .photo-preview {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 340px;
+    border: 1px solid var(--sand3);
+  }
+
+  .photo-preview img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 260px;
+  }
+
+  .photo-preview p {
+    font-size: 0.7rem;
+    color: var(--ink3);
+    padding: 0.5rem 0.75rem;
+    background: #fff;
+    letter-spacing: 0.03em;
+  }
+
   .t-nature { background: #e8f5e0; color: #3a6e10; }
   .t-culture { background: #e0eef8; color: #1a5a8a; }
   .t-food { background: #faf0e0; color: #8a5010; }
@@ -800,13 +825,13 @@
           <div class="day-date">周日</div>
         </div>
         <div class="day-right">
-          <div class="day-title">布罗莫火山 + Madakaripura 瀑布</div>
+          <div class="day-title">布罗莫火山全天</div>
           <ul class="acts">
             <li class="act"><span class="act-dot hl"></span>凌晨出发，驱车约3小时前往布罗莫<span class="act-tag t-nature">自然</span></li>
             <li class="act"><span class="act-dot hl"></span>Penanjakan 观景台欣赏火山日出壮景</li>
             <li class="act"><span class="act-dot hl"></span>骑马或徒步穿越火山灰海，近距离俯瞰火山口</li>
-            <li class="act"><span class="act-dot"></span>返回途中游览 Madakaripura 瀑布<span class="act-tag t-nature">自然</span></li>
-            <li class="act"><span class="act-dot"></span>傍晚返回泗水，晚餐休息</li>
+            <li class="act"><span class="act-dot"></span>下午悠闲探索火山周边，傍晚返回泗水</li>
+            <li class="act"><span class="act-dot"></span>晚餐休息，养精蓄锐</li>
           </ul>
         </div>
       </div>
@@ -817,12 +842,13 @@
           <div class="day-date">周一</div>
         </div>
         <div class="day-right">
-          <div class="day-title">泗水市区 → 飞赴巴厘岛</div>
+          <div class="day-title">Sewu 瀑布 → 飞赴巴厘岛</div>
           <ul class="acts">
-            <li class="act"><span class="act-dot"></span>上午游览阿拉伯街、英雄纪念碑<span class="act-tag t-culture">文化</span></li>
-            <li class="act"><span class="act-dot hl"></span>午餐品尝 Lontong Balap 传统米食<span class="act-tag t-food">美食</span></li>
+            <li class="act"><span class="act-dot hl"></span>清晨出发游览 Sewu 瀑布（Air Terjun Sewu），千泉飞瀑壮观景象<span class="act-tag t-nature">自然</span></li>
+            <li class="act"><span class="act-dot"></span>中午返回泗水，午餐品尝 Lontong Balap 传统米食<span class="act-tag t-food">美食</span></li>
             <li class="act"><span class="act-dot flight"></span>16:45 QG698 飞往巴厘岛（提前3小时到机场）<span class="act-tag t-flight">航班</span></li>
             <li class="act"><span class="act-dot"></span>18:50 抵达巴厘岛登巴萨机场，入住酒店</li>
+            <li class="act"><span class="act-dot hl"></span>晚上也许前往 FINNS Beach Club 玩耍<span class="act-tag t-beach">海滩</span></li>
           </ul>
         </div>
       </div>
@@ -878,12 +904,17 @@
           <div class="day-date">周二</div>
         </div>
         <div class="day-right">
-          <div class="day-title">乌布探索日 — 咖啡庄园 + 圣泉寺</div>
+          <div class="day-title">乌布入住日 — 圣泉寺 + Bali Pulina</div>
           <ul class="acts">
-            <li class="act"><span class="act-dot hl"></span>Bali Pulina 咖啡庄园免费参观，体验鸭香猫咖啡制作<span class="act-tag t-food">美食</span></li>
-            <li class="act"><span class="act-dot hl"></span>圣泉寺 Pura Tirta Empul — 千年神庙，可参与净化水礼<span class="act-tag t-culture">文化</span></li>
-            <li class="act"><span class="act-dot"></span>下午入住 Cicada Resort 乌布，享私人泳池</li>
-            <li class="act"><span class="act-dot hl"></span>傍晚观看传统 Kecak 火舞表演</li>
+            <li class="act"><span class="act-dot hl"></span>离店前也许先顺路游览圣泉寺 Pura Tirta Empul — 千年神庙，可参与净化水礼<span class="act-tag t-culture">文化</span></li>
+            <li class="act"><span class="act-dot hl"></span>顺路在 Bali Pulina 咖啡庄园拍照留念<span class="act-tag t-food">美食</span></li>
+            <li class="act act-photo"><span class="act-dot hl"></span>
+              <div class="photo-preview">
+                <img src="pulina.png" alt="Bali Pulina 天然泳池" />
+                <p>Bali Pulina 天然泳池 · 波光粼粼绝佳拍照胜地</p>
+              </div>
+            </li>
+            <li class="act"><span class="act-dot"></span>入住 Cicada Resort 乌布，入住后就在度假村中享寜，私人泳池放松</li>
           </ul>
         </div>
       </div>
@@ -894,12 +925,10 @@
           <div class="day-date">周三</div>
         </div>
         <div class="day-right">
-          <div class="day-title">乌布慢游 + Canggu 海滩派对</div>
+          <div class="day-title">度假村休朗日</div>
           <ul class="acts">
-            <li class="act"><span class="act-dot hl"></span>上午 Tegalalang 梯田漫步，空中秋千打卡<span class="act-tag t-nature">自然</span></li>
-            <li class="act"><span class="act-dot"></span>乌布皇宫与传统集市购物<span class="act-tag t-shop">购物</span></li>
-            <li class="act"><span class="act-dot hl"></span>驱车约1小时 → FINNS Beach Club，日落前到达<span class="act-tag t-beach">海滩</span></li>
-            <li class="act"><span class="act-dot hl"></span>Finns：海滩派对、冲浪、日落鸡尾酒，营业至凌晨</li>
+            <li class="act"><span class="act-dot hl"></span>全天居住度假村内，泳池、SPA、美食尽享</li>
+
           </ul>
         </div>
       </div>
