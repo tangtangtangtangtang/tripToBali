@@ -508,6 +508,221 @@
     width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
   }
 
+  /* ── AB PLAN ── */
+  .ab-plan {
+    margin-top: 0.75rem;
+    border: 1px solid var(--sand3);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .ab-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--sand3);
+  }
+
+  .ab-tab {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    background: var(--sand);
+    color: var(--ink3);
+    border: none;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .ab-tab:first-child { border-right: 1px solid var(--sand3); }
+
+  .ab-tab.active {
+    background: #fff;
+    color: var(--gold);
+    box-shadow: inset 0 -2px 0 var(--gold);
+  }
+
+  .ab-tab:hover:not(.active) { background: var(--sand2); }
+
+  .ab-content {
+    display: none;
+    padding: 1rem 1.2rem;
+  }
+
+  .ab-content.active { display: block; }
+
+  .ab-content .acts { margin: 0; }
+
+  .ab-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    margin-right: 0.3rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .ab-label-a { background: #e0eef8; color: #1a5a8a; }
+  .ab-label-b { background: #faf0e0; color: #8a5010; }
+
+  .bromo-notes {
+    margin-top: 1rem;
+    background: var(--sand);
+    border: 1px solid var(--sand3);
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .bromo-notes-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--coral);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .bromo-notes ol {
+    list-style: none;
+    counter-reset: bromo;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .bromo-notes li {
+    counter-increment: bromo;
+    font-size: 0.78rem;
+    color: var(--ink2);
+    line-height: 1.6;
+    padding-left: 1.6rem;
+    position: relative;
+  }
+
+  .bromo-notes li::before {
+    content: counter(bromo);
+    position: absolute;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: var(--sand3);
+    color: var(--ink2);
+    font-size: 0.62rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.15rem;
+  }
+
+  .bromo-notes .note-warn {
+    color: var(--coral);
+    font-weight: 500;
+  }
+
+  .notes-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-top: 1rem;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .notes-gallery.single {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+
+  .notes-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .notes-gallery img:hover {
+    transform: scale(1.02);
+  }
+
+  .notes-gallery-caption {
+    grid-column: 1 / -1;
+    font-size: 0.68rem;
+    color: var(--ink3);
+    text-align: center;
+    padding-top: 0.25rem;
+  }
+
+  .sewu-notes {
+    margin-top: 1rem;
+    background: #e8f5e0;
+    border: 1px solid #c8e0b8;
+    border-radius: 6px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .sewu-notes-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: #3a6e10;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sewu-notes ol {
+    list-style: none;
+    counter-reset: sewu;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .sewu-notes li {
+    counter-increment: sewu;
+    font-size: 0.78rem;
+    color: var(--ink2);
+    line-height: 1.6;
+    padding-left: 1.6rem;
+    position: relative;
+  }
+
+  .sewu-notes li::before {
+    content: counter(sewu);
+    position: absolute;
+    left: 0;
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    background: #c8e0b8;
+    color: #3a6e10;
+    font-size: 0.62rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0.15rem;
+  }
+
+  .sewu-notes .note-warn {
+    color: #3a6e10;
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .notes-gallery { grid-template-columns: 1fr; }
+  }
+
   .t-nature { background: #e8f5e0; color: #3a6e10; }
   .t-culture { background: #e0eef8; color: #1a5a8a; }
   .t-food { background: #faf0e0; color: #8a5010; }
@@ -873,14 +1088,41 @@
           <div class="day-date">周日</div>
         </div>
         <div class="day-right">
-          <div class="day-title">布罗莫火山全天</div>
-          <ul class="acts">
-            <li class="act"><span class="act-dot hl"></span>凌晨出发，驱车约3小时前往布罗莫<span class="act-tag t-nature">自然</span></li>
-            <li class="act"><span class="act-dot hl"></span>Penanjakan 观景台欣赏火山日出壮景</li>
-            <li class="act"><span class="act-dot hl"></span>骑马或徒步穿越火山灰海，近距离俯瞰火山口</li>
-            <li class="act"><span class="act-dot"></span>下午悠闲探索火山周边，傍晚返回泗水</li>
-            <li class="act"><span class="act-dot"></span>晚餐休息，养精蓄锐</li>
-          </ul>
+          <div class="day-title">Sewu 瀑布 + 布罗莫火山（A/B 方案待定）</div>
+          <div class="ab-plan">
+            <div class="ab-tabs">
+              <button class="ab-tab active" onclick="switchAB('day5','a')"><span class="ab-label ab-label-a">A</span> 先瀑布 → 后火山</button>
+              <button class="ab-tab" onclick="switchAB('day5','b')"><span class="ab-label ab-label-b">B</span> 先火山 → 后瀑布</button>
+            </div>
+            <div id="day5-a" class="ab-content active">
+              <ul class="acts">
+                <li class="act"><span class="act-dot hl"></span>上午海鸟旅游团配车出发，前往 Sewu 瀑布（Air Terjun Sewu）<span class="act-tag t-nature">自然</span></li>
+                <li class="act"><span class="act-dot hl"></span>千泉飞瀑壮观，拍照打卡</li>
+                <li class="act"><span class="act-dot"></span>下午乘 12 座小包车转运至 Probolinggo</li>
+                <li class="act"><span class="act-dot hl"></span>入住 Bromo Park Hotel，让前台打包早餐，早休备战凌晨日出</li>
+                <li class="act"><span class="act-dot hl"></span>⚠ 办理退房带齐行李上车，不要遗漏物品</li>
+                <li class="act"><span class="act-dot"></span>00:00~01:00 从酒店出发乘车前往吉普车集合点（约1小时）</li>
+                <li class="act"><span class="act-dot hl"></span>集合点等待吉普车（30分钟~1小时），乘吉普车约45分钟至日出观景台</li>
+                <li class="act"><span class="act-dot hl"></span>Penanjakan 观景台欣赏火山日出壮景<span class="act-tag t-nature">自然</span></li>
+                <li class="act"><span class="act-dot hl"></span>06:30 乘吉普车约15~30分钟前往沙海 Pasir Berbisik，徒步至火山口</li>
+                <li class="act"><span class="act-dot"></span>08:30 返回享用早餐</li>
+                <li class="act"><span class="act-dot"></span>10:00 抵达停车场，结束火山行程</li>
+              </ul>
+            </div>
+            <div id="day5-b" class="ab-content">
+              <ul class="acts">
+                <li class="act"><span class="act-dot hl"></span>入住 Bromo Park Hotel，让前台打包早餐，早休备战凌晨日出</li>
+                <li class="act"><span class="act-dot hl"></span>⚠ 办理退房带齐行李上车，不要遗漏物品</li>
+                <li class="act"><span class="act-dot"></span>00:00~01:00 从酒店出发乘车前往吉普车集合点（约1小时）</li>
+                <li class="act"><span class="act-dot hl"></span>集合点等待吉普车（30分钟~1小时），乘吉普车约45分钟至日出观景台</li>
+                <li class="act"><span class="act-dot hl"></span>Penanjakan 观景台欣赏火山日出壮景<span class="act-tag t-nature">自然</span></li>
+                <li class="act"><span class="act-dot hl"></span>06:30 乘吉普车约15~30分钟前往沙海 Pasir Berbisik，徒步至火山口</li>
+                <li class="act"><span class="act-dot"></span>08:30 返回享用早餐</li>
+                <li class="act"><span class="act-dot"></span>10:00 结束火山行程</li>
+                <li class="act"><span class="act-dot hl"></span>之后前往 Sewu 瀑布（Air Terjun Sewu），千泉飞瀑拍照打卡<span class="act-tag t-nature">自然</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -890,14 +1132,78 @@
           <div class="day-date">周一</div>
         </div>
         <div class="day-right">
-          <div class="day-title">Sewu 瀑布 → 飞赴巴厘岛</div>
-          <ul class="acts">
-            <li class="act"><span class="act-dot hl"></span>清晨出发游览 Sewu 瀑布（Air Terjun Sewu），千泉飞瀑壮观景象<span class="act-tag t-nature">自然</span></li>
-            <li class="act"><span class="act-dot"></span>中午返回泗水，午餐品尝 Lontong Balap 传统米食<span class="act-tag t-food">美食</span></li>
-            <li class="act"><span class="act-dot flight"></span>16:45 QG698 飞往巴厘岛（提前3小时到机场）<span class="act-tag t-flight">航班</span></li>
-            <li class="act"><span class="act-dot"></span>18:50 抵达巴厘岛登巴萨机场，入住酒店</li>
-            <li class="act"><span class="act-dot hl"></span>晚上也许前往 FINNS Beach Club 玩耍<span class="act-tag t-beach">海滩</span></li>
-          </ul>
+          <div class="day-title">（承接前日方案）→ 飞赴巴厘岛</div>
+          <div class="ab-plan">
+            <div class="ab-tabs">
+              <button class="ab-tab active" onclick="switchAB('day6','a')"><span class="ab-label ab-label-a">A</span> 火山收尾 → 送机</button>
+              <button class="ab-tab" onclick="switchAB('day6','b')"><span class="ab-label ab-label-b">B</span> 瀑布收尾 → 送机</button>
+            </div>
+            <div id="day6-a" class="ab-content active">
+              <ul class="acts">
+                <li class="act"><span class="act-dot"></span>火山结束后海鸟旅游团配车（12座）直送朱安达 T1</li>
+                <li class="act"><span class="act-dot flight"></span>16:45 QG698 飞往巴厘岛 T1 出发<span class="act-tag t-flight">航班</span></li>
+                <li class="act"><span class="act-dot"></span>18:50 抵达巴厘岛登巴萨机场，入住希尔顿花园酒店</li>
+                <li class="act"><span class="act-dot hl"></span>晚上也许前往 FINNS Beach Club 玩耍<span class="act-tag t-beach">海滩</span></li>
+              </ul>
+            </div>
+            <div id="day6-b" class="ab-content">
+              <ul class="acts">
+                <li class="act"><span class="act-dot"></span>瀑布结束后海鸟旅游团配车（12座）直送朱安达 T1</li>
+                <li class="act"><span class="act-dot flight"></span>16:45 QG698 飞往巴厘岛 T1 出发<span class="act-tag t-flight">航班</span></li>
+                <li class="act"><span class="act-dot"></span>18:50 抵达巴厘岛登巴萨机场，入住希尔顿花园酒店</li>
+                <li class="act"><span class="act-dot hl"></span>晚上也许前往 FINNS Beach Club 玩耍<span class="act-tag t-beach">海滩</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- BROMO NOTES -->
+          <div class="bromo-notes fade-in">
+            <div class="bromo-notes-title">🌋 布罗莫火山参考行程 & 注意事项</div>
+            <ol>
+              <li>入住时请让酒店前台<span class="note-warn">提前打包好早餐</span>或自行准备</li>
+              <li>除了入住山脚下酒店外，当天出行请<span class="note-warn">直接办理退房，带齐行李上车</span>，不要遗漏物品</li>
+              <li>晚上 12:00~1:00 从酒店出发（周末或旺季可能堵车，司机会根据路况建议出发时间），乘车前往吉普车集合点，车程约 1 小时</li>
+              <li>司机一般提前在大堂等，如果没有看到：可能睡在车里直接去<span class="note-warn">敲车窗</span>，或在停车场旁边司机休息间喊一下即可</li>
+              <li>吉普车集合点可能需要等待 30 分钟~1 小时（山路狭窄，吉普车多容易堵）。司机引领上车后会在停车场原地等待</li>
+              <li>乘坐吉普车约 45 分钟前往日出观景台。⚠ <span class="note-warn">下车时注意记住停车位置，拍照留存</span>，以免太多车找不到</li>
+              <li>吉普车停车点到观景台需走约 10 分钟泥路山路，天黑行走看不到路况，<span class="note-warn">打开手机手电筒照亮或自备户外灯</span></li>
+              <li>若吉普车堵车严重需较远停车，可徒步到顶（就一条路），也可让吉普车司机叫摩托车托运到观景台（费用自理，约 5 万印尼盾/趟）</li>
+              <li>06:30 左右乘吉普车约 15~30 分钟前往沙海 Pasir Berbisik，徒步布罗莫火山口（约 250 级台阶）。灰尘较重可骑马（单程约 15 万印尼盾，往返约 30 万，可砍价）。<span class="note-warn">骑马过程较颠簸，穿厚裤子做好防护</span>。骑马来回的话马夫只给 20~30 分钟观赏火山口</li>
+              <li>08:30 左右乘吉普车返回，享用早餐（两种方式：酒店打包的早餐 or 司机安排早餐）</li>
+              <li>10:00 左右抵达停车场，火山行程结束。之后团车送往机场/瀑布，车程约 7~8h</li>
+              <li><span class="note-warn">必备物品</span>：口罩（火山灰较厚）、一次性鞋套（避免弄脏鞋子）、厚衣服/冲锋衣（山顶温度低于 10°）。山上小卖部可租棉衣（25~50k 印尼盾）</li>
+              <li>吉普车是柴油车，上下山味道大，<span class="note-warn">闻不了汽油味的准备袋子以防呕吐</span>，自备晕车药。一车可坐 4~5 人</li>
+              <li>山上小卖部物资丰富（手套、帽子、鞋套、雨衣、方便面、咖啡、冰箱贴等），有火炉取暖。附近有卫生间但需收费</li>
+            </ol>
+            <div class="notes-gallery">
+              <img src="huoshan1.png" alt="布罗莫火山集合点与沙海全景" />
+              <img src="huoshan2.png" alt="布罗莫火山观景台与骑马" />
+              <img src="huoshan3.png" alt="布罗莫火山小卖部与吉普车" />
+              <p class="notes-gallery-caption">↑ 布罗莫火山实景参考（集合点 · 观景台 · 沙海骑马 · 小卖部 · 吉普车）</p>
+            </div>
+          </div>
+
+          <!-- SEWU NOTES -->
+          <div class="sewu-notes fade-in">
+            <div class="sewu-notes-title">🌊 Sewu 塞伍瀑布参考行程 & 注意事项</div>
+            <ol>
+              <li>在酒店<span class="note-warn">享用早餐后办理退房，带齐行李出发</span>❗</li>
+              <li>出发时间一般是 <span class="note-warn">7:00</span>，具体时间请看群里工作人员发的通知。若有从机场落地的客人，会先接上再一起出发</li>
+              <li>从泗水到塞伍瀑布停车场约 <span class="note-warn">3.5~4 小时</span>车程</li>
+              <li>抵达后和当地向导汇合，由向导带领至观景台，一直到徒步结束。<span class="note-warn">拍照后记得当场跟向导要联系方式或在线传送照片</span>，不然很难找回照片❗</li>
+              <li>游玩时间约 <span class="note-warn">3~4 小时</span>。返回停车场后有卫生间可以换衣服（收费 5,000 印尼盾/次，约 2.5 元人民币）</li>
+              <li>下瀑布路上需要<span class="note-warn">淌水</span>，且雾气大。建议带好：<strong>一套换洗衣服 + 干毛巾</strong>、<strong>溯溪鞋</strong>（有水路 + 石子路 + 斜坡，防滑。不建议穿拖鞋❗实测容易打滑）、<strong>防水背包</strong>、<strong>现金</strong></li>
+              <li>路上大多是扶梯路，坡度较陡且窄。打卡点多在被水冲刷的石头上，<span class="note-warn">容易打滑磕碰，安全至上</span></li>
+              <li>景区小卖部物资充足：溯溪鞋、墨镜、雨衣、防水袋、方便面、矿泉水、水果等。如有需要可让向导帮忙租借或代购</li>
+              <li>如果遇上雨季，瀑布雨水会较大，司机会建议早点出发，请听从司机安排</li>
+              <li>离开瀑布时间约下午 16:00 左右，时间可以提前，根据大家需求安排。行程结束后可和司机商量用餐，司机会带到餐厅自费用餐</li>
+              <li>路程时间均<span class="note-warn">不含午餐晚餐</span>的用餐时间</li>
+            </ol>
+            <div class="notes-gallery single">
+              <img src="sewu.png" alt="Sewu 塞伍瀑布注意事项图解" />
+              <p class="notes-gallery-caption">↑ Sewu 瀑布实景 & 注意事项图解</p>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -1115,7 +1421,7 @@
       <div class="tip-card">
         <div class="tip-icon">🌋</div>
         <div class="tip-title">布罗莫火山</div>
-        <div class="tip-body">建议前一晚入住 Cemoro Lawang 村庄，凌晨3点出发赶日出。务必带厚外套（山顶寒冷）与口罩（硫磺气味）。</div>
+        <div class="tip-body">跟团游（海鸟旅游 Free Bird Tour），含接送机 + 酒店。4/5–4/6 布罗莫火山 + Sewu 瀑布，A/B 方案灵活安排。凌晨看日出务必带厚外套与口罩（硫磺气味）。详见行程中注意事项。</div>
       </div>
       <div class="tip-card">
         <div class="tip-icon">🛕</div>
@@ -1152,6 +1458,27 @@
   北京 · 吉隆坡 · 泗水 · 巴厘岛 · 胡志明市 · 北京<br>
   April 2025 · Private Travel Journal
 </footer>
+
+<script>
+  // AB Plan switcher
+  function switchAB(day, plan) {
+    document.querySelectorAll(`#${day}-a, #${day}-b`).forEach(el => el.classList.remove('active'));
+    document.getElementById(`${day}-${plan}`).classList.add('active');
+    const tabs = document.getElementById(`${day}-${plan}`).closest('.ab-plan').querySelectorAll('.ab-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+    tabs[plan === 'a' ? 0 : 1].classList.add('active');
+    // Sync day5 and day6 tabs
+    if (day === 'day5') switchAB2('day6', plan);
+    if (day === 'day6') switchAB2('day5', plan);
+  }
+  function switchAB2(day, plan) {
+    document.querySelectorAll(`#${day}-a, #${day}-b`).forEach(el => el.classList.remove('active'));
+    document.getElementById(`${day}-${plan}`).classList.add('active');
+    const tabs = document.getElementById(`${day}-${plan}`).closest('.ab-plan').querySelectorAll('.ab-tab');
+    tabs.forEach(t => t.classList.remove('active'));
+    tabs[plan === 'a' ? 0 : 1].classList.add('active');
+  }
+</script>
 
 <script>
   // Leaflet map
