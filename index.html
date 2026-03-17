@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>东南亚三城之旅 · 2025</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -470,6 +472,42 @@
     letter-spacing: 0.03em;
   }
 
+  /* ── MAP ── */
+  #map-section {
+    max-width: 100%;
+    padding: 5rem 2rem;
+    background: var(--ink);
+  }
+
+  #map-section .section-label { color: var(--gold2); }
+  #map-section .section-title { color: #fff; }
+  #map-section .section-divider { background: var(--gold2); }
+
+  #map-inner { max-width: 960px; margin: 0 auto; }
+
+  #travel-map {
+    width: 100%;
+    height: 520px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-top: 2rem;
+  }
+
+  .map-legend {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .map-legend-item {
+    display: flex; align-items: center; gap: 0.4rem;
+    font-size: 0.72rem; color: rgba(255,255,255,0.5);
+  }
+
+  .map-legend-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+  }
+
   .t-nature { background: #e8f5e0; color: #3a6e10; }
   .t-culture { background: #e0eef8; color: #1a5a8a; }
   .t-food { background: #faf0e0; color: #8a5010; }
@@ -602,6 +640,7 @@
       <li><a href="#surabaya">泗水</a></li>
       <li><a href="#bali">巴厘岛</a></li>
       <li><a href="#hcm">胡志明</a></li>
+      <li><a href="#map">地图</a></li>
       <li><a href="#tips">贴士</a></li>
     </ul>
   </div>
@@ -1028,6 +1067,23 @@
   </div>
 </section>
 
+<!-- MAP -->
+<section id="map" id="map-section" style="max-width:100%; padding:5rem 2rem; background:var(--ink);">
+  <div id="map-inner" style="max-width:960px; margin:0 auto;">
+    <div class="fade-in">
+      <div class="section-label" style="color:var(--gold2);">Travel Map</div>
+      <div class="section-divider" style="background:var(--gold2);"></div>
+      <h2 class="section-title" style="color:#fff;">行程地图</h2>
+    </div>
+    <div id="travel-map" class="fade-in"></div>
+    <div class="map-legend fade-in">
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#e8855a;"></div>泗水 / 布罗莫</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#5aae8c;"></div>巴厘岛</div>
+      <div class="map-legend-item"><div class="map-legend-dot" style="background:#e8c85a;"></div>胡志明市</div>
+    </div>
+  </div>
+</section>
+
 <!-- TIPS -->
 <section class="section" id="tips" style="background: var(--sand); max-width: 100%; padding: 5rem 2rem;">
   <div style="max-width: 960px; margin: 0 auto;">
@@ -1087,6 +1143,60 @@
   北京 · 吉隆坡 · 泗水 · 巴厘岛 · 胡志明市 · 北京<br>
   April 2025 · Private Travel Journal
 </footer>
+
+<script>
+  // Leaflet map
+  const map = L.map('travel-map', { zoomControl: true }).setView([-3.5, 113], 5);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
+
+  const colSurabaya = '#e8855a';
+  const colBali     = '#5aae8c';
+  const colHCM      = '#e8c85a';
+
+  function mkIcon(color) {
+    return L.divIcon({
+      className: '',
+      html: `<div style="width:14px;height:14px;border-radius:50%;background:${color};border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.5);"></div>`,
+      iconSize: [14, 14],
+      iconAnchor: [7, 7],
+      popupAnchor: [0, -10]
+    });
+  }
+
+  const spots = [
+    // 泗水 / 布罗莫
+    { lat: -7.2504, lng: 112.7688, name: '朱安达国际机场', sub: '泗水', color: colSurabaya },
+    { lat: -7.2575, lng: 112.7521, name: '泗水市区', sub: '入住 / 餐饮', color: colSurabaya },
+    { lat: -7.9424, lng: 112.9508, name: '布罗莫火山', sub: 'Penanjakan 观景台 · 火山口', color: colSurabaya },
+    { lat: -7.8968, lng: 113.0208, name: 'Sewu 瀑布', sub: '4/6 清晨游览', color: colSurabaya },
+    // 巴厘岛
+    { lat: -8.7467, lng: 115.1674, name: '登巴萨机场', sub: 'Ngurah Rai · Hilton Garden Inn', color: colBali },
+    { lat: -8.5069, lng: 115.2625, name: '圣泉寺 Pura Tirta Empul', sub: '4/9 离开乌布前参观', color: colBali },
+    { lat: -8.5215, lng: 115.2665, name: 'Bali Pulina 咖啡庄园', sub: '4/7 天然泳池拍照打卡', color: colBali },
+    { lat: -8.4446, lng: 115.3322, name: 'Tegalalang 梯田', sub: '4/7 打卡拍照', color: colBali },
+    { lat: -8.5189, lng: 115.2635, name: 'Cicada Resort 乌布', sub: '4/7–4/9 入住', color: colBali },
+    { lat: -8.7012, lng: 115.2305, name: 'Courtyard Nusa Dua', sub: '4/9–4/12 入住', color: colBali },
+    { lat: -8.8957, lng: 115.0946, name: 'Blue Point Beach (苏鲁班)', sub: '4/11 备选', color: colBali },
+    { lat: -8.6705, lng: 115.4580, name: 'Sanur 码头', sub: '乘船去努沙·佩尼达', color: colBali },
+    { lat: -8.8914, lng: 115.4952, name: '精灵坠崖 Kelingking Beach', sub: '4/10 全天游览', color: colBali },
+    { lat: -8.8973, lng: 115.4768, name: "Angel's Billabong & Broken Beach", sub: '4/10 顺游', color: colBali },
+    { lat: -8.6215, lng: 115.0865, name: 'FINNS Beach Club', sub: '4/6 晚可能前往', color: colBali },
+    // 胡志明市
+    { lat: 10.7769, lng: 106.7009, name: '新山一机场', sub: '胡志明市过境', color: colHCM },
+    { lat: 10.7769, lng: 106.6953, name: '统一宫 / 战争遗址博物馆', sub: '4/13 待定', color: colHCM },
+    { lat: 10.7717, lng: 106.6981, name: 'Ben Thanh 市场', sub: '4/13 待定', color: colHCM },
+  ];
+
+  spots.forEach(s => {
+    L.marker([s.lat, s.lng], { icon: mkIcon(s.color) })
+      .addTo(map)
+      .bindPopup(`<strong style="font-size:0.85rem">${s.name}</strong><br><span style="font-size:0.75rem;color:#666">${s.sub}</span>`);
+  });
+</script>
 
 <script>
   // Scroll fade-in
